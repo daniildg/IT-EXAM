@@ -8,31 +8,32 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → [] */
 
-string initData = Console.ReadLine();
-var dataArray = initData.Split(' ');
-PrintArray(FilterData(dataArray, 3));
+int GetLength(string[] array, int size)
+{
+    int length = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= size) length++;
+    }
+    return length;
+}
 
 string[] FilterData(string[] array, int size)
 {
-  int length = 0;
+    int newLength = GetLength(array, size) + 1;
+    string[] newArray = new string[newLength];
+    int count = 0;
 
-  for (int i = 0; i < array.Length; i++)
-  {
-    if (array[i].Length <= size) length++;
-  }
-
-  string[] newArray = new string[length + 1];
-  int count = 0;
-
-  for (int i = 0; i < array.Length; i++)
-  {
-    if (array[i].Length <= size)
+    for (int i = 0; i < array.Length; i++)
     {
-      newArray[count] = array[i];
-      count++;
+        if (array[i].Length <= size)
+        {
+            newArray[count] = array[i];
+            count++;
+        }
     }
-  }
-  return newArray;
+    return newArray;
 }
 
 void PrintArray(string[] arr)
@@ -44,3 +45,6 @@ void PrintArray(string[] arr)
   }
   Console.Write("]");
 }
+string initData = Console.ReadLine();
+var dataArray = initData.Split(' ');
+PrintArray(FilterData(dataArray, 3));
