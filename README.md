@@ -11,4 +11,4 @@
 
 **Вывод и Конец**
 
-https://drive.google.com/file/d/14TegA8FYNHSR7giUw6Gr3gV-MH7H2hnD/view?usp=sharing
+![блок-схема](https://drive.google.com/file/d/14TegA8FYNHSR7giUw6Gr3gV-MH7H2hnD/view?usp=sharing)
