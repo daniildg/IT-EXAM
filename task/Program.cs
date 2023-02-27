@@ -10,30 +10,30 @@
 
 int GetLength(string[] array, int size)
 {
-    int length = 0;
+  int length = 0;
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i].Length <= size) length++;
-    }
-    return length;
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length <= size) length++;
+  }
+  return length;
 }
 
 string[] FilterData(string[] array, int size)
 {
-    int newLength = GetLength(array, size) + 1;
-    string[] newArray = new string[newLength];
-    int count = 0;
+  int newLength = GetLength(array, size) + 1;
+  string[] newArray = new string[newLength];
+  int count = 0;
 
-    for (int i = 0; i < array.Length; i++)
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length <= size)
     {
-        if (array[i].Length <= size)
-        {
-            newArray[count] = array[i];
-            count++;
-        }
+      newArray[count] = array[i];
+      count++;
     }
-    return newArray;
+  }
+  return newArray;
 }
 
 void PrintArray(string[] arr)
@@ -45,6 +45,7 @@ void PrintArray(string[] arr)
   }
   Console.Write("]");
 }
+Console.Write("Введите ваши данные через пробел -> ");
 string initData = Console.ReadLine();
 var dataArray = initData.Split(' ');
 PrintArray(FilterData(dataArray, 3));
